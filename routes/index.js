@@ -108,7 +108,7 @@ function isLoggedIn(req, res, next) {
 app.post('/login', passport.authenticate('local-login', {
        successRedirect : '/helloworld', // redirect to the secure profile section
        failureRedirect : '/', // redirect back to the signup page if there is an error
-       failureFlash : false // allow flash messages
+       failureFlash : true // allow flash messages
 }));
 
 app.get('/protected', isLoggedIn, function(req, res) {
